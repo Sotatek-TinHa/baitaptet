@@ -82,15 +82,6 @@ contract ERC721Staking is Ownable, ReentrancyGuard, Pausable {
     }
 
     /**
-     * @notice Function used to claim the accrued ERC20 Reward Tokens.
-     */
-    function claimRewards(uint256 rewards) external {
-        require(rewards > 0, "You have no rewards to claim");
-
-        erc20Token.safeTransfer(msg.sender, rewards);
-    }
-
-    /**
      * @dev Pause.
      */
     function pause() external onlyOwner {
